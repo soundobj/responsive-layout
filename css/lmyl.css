@@ -1,0 +1,160 @@
+.col-1-masonry, .col-2-masonry, .col-3-masonry, .col-4-masonry, .col-5-masonry {
+  position: relative;
+  width: 218px;
+  overflow: hidden; }
+
+.col-1-masonry {
+  height: 190px; }
+
+.col-2-masonry {
+  height: 230px; }
+
+.col-3-masonry {
+  height: 270px; }
+
+.col-4-masonry {
+  height: 300px; }
+
+.col-5-masonry {
+  height: 330px; }
+
+body {
+  color: #fcfcfc;
+  background-color: #1E2858; }
+
+.login {
+  border: 1px #fcfcfc solid;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: Transparent;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none; }
+
+.push-right {
+  float: right; }
+
+.home {
+  margin-top: 5px; }
+
+.centered {
+  margin: 0 auto;
+  text-align: center; }
+
+.padded {
+  padding: 15px; }
+
+.latest {
+  color: #313131;
+  background-color: #fcfcfc; }
+
+.about {
+  padding-top: 60px; }
+
+.banner {
+  background-color: #1E2858;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-bottom: 100px; }
+
+.form-group {
+  background-color: rgba(49, 49, 49, 0.6);
+  padding: 20px; }
+
+.search {
+  margin-top: 25px;
+  padding: 15px; }
+  .search input {
+    width: 110px;
+    padding: 8px; }
+  .search label {
+    padding: 10px; }
+  .search .btn {
+    padding: 0px 12px;
+    margin-left: 9px; }
+  .search button, .search input {
+    border-radius: 3px;
+    height: 35px; }
+
+div#masonry {
+  column-width: 220px;
+  column-gap: 25px;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  -webkit-column-count: 5;
+  vertical-align: baseline; }
+  div#masonry figure {
+    background: #fcfcfc;
+    border: 2px solid #fcfcfc;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    margin: 0 7px 13px;
+    display: inline-block;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px; }
+  div#masonry figure img {
+    width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 5px; }
+
+.student-work {
+  width: 220px;
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px; }
+
+.student-work-info {
+  background-color: #FFFFFF; }
+
+@media screen and (max-width: 340px) {
+  .search input {
+    width: 100%; }
+
+  .list-inline > li {
+    display: block; }
+
+  .push-right {
+    float: none; }
+
+  .about {
+    padding-top: 0; }
+
+  .search {
+    margin-top: 0; }
+
+  .btn-success {
+    margin-top: 15px; }
+
+  .banner {
+    margin-bottom: 0; }
+
+  #topic, #year-group, #genre, #school-name, #go {
+    float: none; }
+
+  div#masonry {
+    -webkit-column-count: 1; } }
+@media screen and (min-width: 341px) and (max-width: 860px) {
+  .search label {
+    display: block; }
+
+  #topic, #year-group {
+    float: left; }
+
+  #genre, #school-name {
+    float: right; }
+
+  .search .btn {
+    margin-top: 10px; }
+
+  .search input {
+    margin: 3px; }
+
+  div#masonry {
+    -webkit-column-count: 1; } }
+@media screen and (min-width: 900px) {
+  #topic, #year-group, #genre, #school-name, #go {
+    float: left; } }
+
+/*# sourceMappingURL=lmyl.css.map */

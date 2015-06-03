@@ -1,0 +1,214 @@
+$pure-white: #FFFFFF;
+$white: #fcfcfc;
+$radius: 3px;
+$grey: #313131;
+$blue: #1E2858;
+$student-work-size: 220px;
+$list-masonry-heights: 190px,230px,270px,300px,330px;
+
+%image-cropper {
+  position: relative;
+  width: #{$student-work-size - 2px};
+  //height: 240px;
+  overflow: hidden;
+}
+
+@mixin col-x-masonry {
+  @each $item in $list-masonry-heights {
+    .col-#{index($list-masonry-heights,$item)}-masonry {
+      height:$item;
+      @extend %image-cropper;
+    }
+  }
+}
+
+@include col-x-masonry;
+
+body {
+  color: $white;
+  background-color: $blue;
+}
+
+.login {
+  border: 1px $white solid;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  border-radius: $radius;
+  background-color: Transparent;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+.push-right {
+  float: right;
+}
+
+.home {
+  margin-top: 5px;
+}
+
+.centered {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.padded {
+  padding: 15px;
+}
+
+.latest {
+  color: $grey;
+  background-color: $white;
+}
+
+.about {
+  padding-top: 60px;
+}
+
+.banner {
+  background-color: $blue;
+  margin-left: 25px;
+  margin-right: 20px;
+  margin-bottom: 100px;
+}
+
+.form-group {
+  background-color: rgba($grey, 0.6);
+  padding: 20px;
+}
+
+.search {
+  margin-top: 25px;
+  padding: 15px;
+
+  input {
+    width: 110px;
+    padding: 8px;
+  }
+
+  label {
+    padding: 10px;
+  }
+
+  .btn {
+    padding: 0px 12px;
+    margin-left: 9px;
+  }
+
+  button, input {
+    border-radius: $radius;
+    height: 35px;
+  }
+}
+
+div#masonry {
+  column-width: 220px;
+  column-gap: 25px;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
+  -webkit-column-count: 5;
+  vertical-align: baseline;
+
+  figure {
+    background: $white;
+    border: 2px solid $white;
+    box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
+    margin: 0 7px 13px;
+    //column-break-inside: avoid;
+    display: inline-block;
+    border-top-left-radius: $radius;
+    border-top-right-radius: $radius;
+    //vertical-align: top;
+  }
+
+  figure img {
+    width: 100%; height: auto;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 15px;
+    margin-bottom: 5px;
+  }
+}
+
+.student-work {
+  width: $student-work-size;
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+.student-work-info {
+  background-color: $pure-white;
+}
+
+@media screen and (max-width:340px) {
+  // expand input fields
+  .search input {
+    width: 100%;
+  }
+  // collapse navigation
+  .list-inline > li {
+    display: block;
+  }
+
+  .push-right {
+    float: none;
+  }
+
+  .about {
+    padding-top: 0;
+  }
+
+  .search {
+    margin-top: 0;
+  }
+
+  .btn-success {
+    margin-top: 15px;
+  }
+
+  .banner {
+    margin-bottom: 0;
+  }
+
+  #topic, #year-group,  #genre, #school-name, #go {
+    float: none;
+  }
+
+  div#masonry {
+    -webkit-column-count: 1;
+  }
+}
+
+@media screen and(min-width: 341px) and (max-width: 860px){
+
+  .search label {
+    display: block
+  }
+
+  #topic, #year-group  {
+    float: left;
+  }
+
+  #genre, #school-name  {
+    float: right;
+  }
+
+  .search .btn {
+    margin-top: 10px;
+  }
+
+  .search input {
+    margin: 3px;
+  }
+
+  div#masonry {
+    -webkit-column-count: 1;
+  }
+}
+
+@media screen and(min-width:900px){
+  #topic, #year-group,  #genre, #school-name, #go {
+    float: left;
+  }
+}

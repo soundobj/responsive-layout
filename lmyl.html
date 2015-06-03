@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1">
+    <link href="css/bootstrap.css" rel="stylesheet" />
+    <link href="css/lmyl.css" rel="stylesheet" />
+    <title>Lend me your literacy</title>
+</head>
+<body>
+<script src="js/vendor/jquery.min.js"></script>
+<section class="banner">
+    <nav>
+        <div class="row">
+            <div class="pull-left">
+                <h2 class="home">LendMeYourLiteracy</h2>
+            </div>
+            <div class="push-right">
+                <ul class="list-inline">
+                    <li><h4>Sign up</h4></li>
+                    <li><h4>How it works</h4></li>
+                    <li><h4>Free resources</h4></li>
+                    <li><button class="login">Log in</button></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section class="about centered">
+        <h2>
+            <strong>We share children's writing to inspire young writers</strong>
+        </h2>
+        <h5>Over 5,000 pieces of children's writing from across the world</h5>
+        <form class="form-inline search centered">
+            <div class="form-group">
+                <div id="topic">
+                    <label for="topic">Find writing about</label>
+                    <input type="text"
+                           class="form-inline"
+                           placeholder="Topic">
+                </div>
+                <div id="genre">
+                    <label for="genre">and</label>
+                    <input type="text"
+                           class="form-inline"
+                           placeholder="Genre">
+                </div>
+                <div id="year-group">
+                    <label for="year-group">by</label>
+                    <input type="text"
+                           class="form-inline"
+                           placeholder="Year Group">
+                </div>
+                <div id="school-name">
+                    <label for="school-name">of</label>
+                    <input type="text"
+                           class="form-inline"
+                           placeholder="School Name">
+                </div>
+                <div id="go">
+                    <button type="text" class="btn btn-success">Let's go!</button>
+                </div>
+            </div>
+        </form>
+    </section>
+</section>
+<section class="latest centered"><h3 class="padded">Most viewed this week</h3>
+<div id="masonry" class="masonry">
+
+</div>
+</section>
+
+<div id="student-work-template" style="display: none">
+    <figure class="student-work">
+        <div class="image-cropper">
+        <img src="LMYL%20Test/Sample%20Work/IMG_2979.png" />
+        </div>
+        <div class="student-work-info">
+            <div class="title">
+                <a href="#">sample title</a>
+            </div>
+            <div class="school">
+                <span>School name</span>
+            </div>
+            <div class="stats">
+                <span>2 comments, 1 like</span>
+            </div>
+        </div>
+    </figure>
+</div>
+
+</body>
+</html>
+
+
+<script>
+
+function renderMasonry(){
+    var imgPath = "LMYL%20Test/Sample%20Work/IMG_";
+    var masonryEffect = [1,2,3,4,5];
+    var count = 2979;
+    for(var i = 0; i < 4; i++){
+        shuffle(masonryEffect);
+        for (var b = 0; b < masonryEffect.length; b++) {
+
+            var template = $("#student-work-template .student-work").clone();
+            // populate image path
+            $(template).find("img").attr("src", imgPath + count + ".png");
+            // add random image height
+            $(template).find(".image-cropper")
+                    .attr("class", "col-" + masonryEffect[b] + "-masonry");
+            template.appendTo("#masonry");
+            count ++;
+        }
+    }
+}
+
+renderMasonry();
+
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex ;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+    return array;
+}
+</script>
