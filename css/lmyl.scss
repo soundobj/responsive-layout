@@ -9,7 +9,6 @@ $list-masonry-heights: 190px,230px,270px,300px,330px;
 %image-cropper {
   position: relative;
   width: #{$student-work-size - 2px};
-  //height: 240px;
   overflow: hidden;
 }
 
@@ -174,10 +173,6 @@ div#masonry {
   #topic, #year-group,  #genre, #school-name, #go {
     float: none;
   }
-
-  div#masonry {
-    -webkit-column-count: 1;
-  }
 }
 
 @media screen and(min-width: 341px) and (max-width: 860px){
@@ -201,14 +196,36 @@ div#masonry {
   .search input {
     margin: 3px;
   }
+}
 
+// display form fields inline
+@media screen and(min-width:900px){
+  #topic, #year-group,  #genre, #school-name, #go {
+    float: left;
+  }
+}
+
+// column size queries
+@media screen and(max-width:($student-work-size * 2)){
   div#masonry {
     -webkit-column-count: 1;
   }
 }
 
-@media screen and(min-width:900px){
-  #topic, #year-group,  #genre, #school-name, #go {
-    float: left;
+@media screen and(min-width:($student-work-size * 2)) and (max-width:($student-work-size * 3)){
+  div#masonry {
+    -webkit-column-count: 2;
+  }
+}
+
+@media screen and(min-width:($student-work-size * 3)) and (max-width:($student-work-size * 4)){
+  div#masonry {
+    -webkit-column-count: 3;
+  }
+}
+
+@media screen and(min-width:($student-work-size * 4)) and (max-width:($student-work-size * 5)){
+  div#masonry {
+    -webkit-column-count: 4;
   }
 }
