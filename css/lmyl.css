@@ -60,7 +60,8 @@ body {
 
 .form-group {
   background-color: rgba(49, 49, 49, 0.6);
-  padding: 20px; }
+  padding: 20px;
+  display: inline-block; }
 
 .search {
   margin-top: 25px;
@@ -71,8 +72,7 @@ body {
   .search label {
     padding: 10px; }
   .search .btn {
-    padding: 0px 12px;
-    margin-left: 9px; }
+    padding: 0px 12px; }
   .search button, .search input {
     border-radius: 3px;
     height: 35px; }
@@ -90,6 +90,7 @@ div#masonry {
     border: 2px solid #fcfcfc;
     box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
     margin: 0 7px 13px;
+    column-break-inside: avoid;
     display: inline-block;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px; }
@@ -108,7 +109,7 @@ div#masonry {
 .student-work-info {
   background-color: #FFFFFF; }
 
-@media screen and (max-width: 340px) {
+@media screen and (max-width: 345px) {
   .search input {
     width: 100%; }
 
@@ -132,7 +133,7 @@ div#masonry {
 
   #topic, #year-group, #genre, #school-name, #go {
     float: none; } }
-@media screen and (min-width: 341px) and (max-width: 860px) {
+@media screen and (min-width: 345px) and (max-width: 880px) {
   .search label {
     display: block; }
 
@@ -147,20 +148,38 @@ div#masonry {
 
   .search input {
     margin: 3px; } }
-@media screen and (min-width: 900px) {
-  #topic, #year-group, #genre, #school-name, #go {
-    float: left; } }
 @media screen and (max-width: 440px) {
   div#masonry {
-    -webkit-column-count: 1; } }
+    -webkit-column-count: 1; }
+
+  .form-group {
+    width: 280px; } }
 @media screen and (min-width: 440px) and (max-width: 660px) {
   div#masonry {
-    -webkit-column-count: 2; } }
+    -webkit-column-count: 2; }
+
+  .form-group {
+    width: 280px; } }
 @media screen and (min-width: 660px) and (max-width: 880px) {
   div#masonry {
-    -webkit-column-count: 3; } }
+    -webkit-column-count: 3; }
+
+  .form-group {
+    width: 505px; } }
 @media screen and (min-width: 880px) and (max-width: 1100px) {
   div#masonry {
-    -webkit-column-count: 4; } }
+    -webkit-column-count: 4; }
+
+  .form-group {
+    width: 815px; } }
+@media screen and (min-width: 880px) {
+  #topic, #year-group, #genre, #school-name, #go {
+    float: left; }
+
+  .form-group {
+    width: 815px; }
+
+  .search .btn {
+    margin-left: 9px; } }
 
 /*# sourceMappingURL=lmyl.css.map */

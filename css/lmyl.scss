@@ -5,6 +5,8 @@ $grey: #313131;
 $blue: #1E2858;
 $student-work-size: 220px;
 $list-masonry-heights: 190px,230px,270px,300px,330px;
+$small: 345px;
+$input-width: 110px;
 
 %image-cropper {
   position: relative;
@@ -75,6 +77,7 @@ body {
 .form-group {
   background-color: rgba($grey, 0.6);
   padding: 20px;
+  display: inline-block;
 }
 
 .search {
@@ -82,7 +85,7 @@ body {
   padding: 15px;
 
   input {
-    width: 110px;
+    width: $input-width;
     padding: 8px;
   }
 
@@ -92,7 +95,6 @@ body {
 
   .btn {
     padding: 0px 12px;
-    margin-left: 9px;
   }
 
   button, input {
@@ -115,11 +117,10 @@ div#masonry {
     border: 2px solid $white;
     box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
     margin: 0 7px 13px;
-    //column-break-inside: avoid;
+    column-break-inside: avoid;
     display: inline-block;
     border-top-left-radius: $radius;
     border-top-right-radius: $radius;
-    //vertical-align: top;
   }
 
   figure img {
@@ -140,7 +141,7 @@ div#masonry {
   background-color: $pure-white;
 }
 
-@media screen and (max-width:340px) {
+@media screen and (max-width:$small) {
   // expand input fields
   .search input {
     width: 100%;
@@ -175,7 +176,7 @@ div#masonry {
   }
 }
 
-@media screen and(min-width: 341px) and (max-width: 860px){
+@media screen and(min-width: $small) and (max-width: $student-work-size * 4){
 
   .search label {
     display: block
@@ -198,17 +199,14 @@ div#masonry {
   }
 }
 
-// display form fields inline
-@media screen and(min-width:900px){
-  #topic, #year-group,  #genre, #school-name, #go {
-    float: left;
-  }
-}
-
-// column size queries
+// column size queries to be refactored as a mixing
 @media screen and(max-width:($student-work-size * 2)){
   div#masonry {
     -webkit-column-count: 1;
+  }
+
+  .form-group {
+    width: 280px;
   }
 }
 
@@ -216,16 +214,43 @@ div#masonry {
   div#masonry {
     -webkit-column-count: 2;
   }
+
+  .form-group {
+    width: 280px;
+  }
 }
 
 @media screen and(min-width:($student-work-size * 3)) and (max-width:($student-work-size * 4)){
   div#masonry {
     -webkit-column-count: 3;
   }
+
+  .form-group {
+    width: 505px;
+  }
 }
 
 @media screen and(min-width:($student-work-size * 4)) and (max-width:($student-work-size * 5)){
   div#masonry {
     -webkit-column-count: 4;
+  }
+
+  .form-group {
+    width: 815px;
+  }
+}
+
+// display form fields inline
+@media screen and(min-width:($student-work-size * 4)){
+  #topic, #year-group,  #genre, #school-name, #go {
+    float: left;
+  }
+
+  .form-group {
+    width: 815px;
+  }
+
+  .search .btn {
+    margin-left: 9px;
   }
 }
